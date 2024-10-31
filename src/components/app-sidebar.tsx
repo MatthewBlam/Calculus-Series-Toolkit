@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { GalleryVerticalEnd } from "lucide-react";
+import { Sigma } from "lucide-react";
 
 import {
     Sidebar,
@@ -91,7 +91,10 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
                         <SidebarMenuButton size="lg" asChild>
                             <a href="#" className="gap-3">
                                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                                    <GalleryVerticalEnd className="size-4" />
+                                    <Sigma
+                                        strokeWidth={2.75}
+                                        className="size-4"
+                                    />
                                 </div>
                                 <div className="flex flex-col gap-1 leading-none">
                                     <span className="font-semibold">
@@ -104,7 +107,7 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
                 </SidebarMenu>
             </SidebarHeader>
             <SidebarContent>
-                <SidebarGroup>
+                <SidebarGroup className="pt-0">
                     <SidebarMenu className="gap-2">
                         {data.navMain.map((item) => (
                             <SidebarMenuItem key={item.title}>
