@@ -84,7 +84,7 @@ interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
 
 export function AppSidebar({ ...props }: AppSidebarProps) {
     return (
-        <Sidebar variant="floating" {...props}>
+        <Sidebar variant="sidebar" {...props}>
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
