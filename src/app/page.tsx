@@ -44,7 +44,7 @@ export default function Page() {
                                     {section}
                                 </BreadcrumbLink>
                             </BreadcrumbItem>
-                            <BreadcrumbSeparator className="hidden md:block" />
+                            <BreadcrumbSeparator className="hidden md:block mt-[1px]" />
                             <BreadcrumbItem>
                                 <BreadcrumbPage>{active}</BreadcrumbPage>
                             </BreadcrumbItem>
