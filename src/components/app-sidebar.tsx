@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Sigma } from "lucide-react";
+import { SquareSigma } from "lucide-react";
 
 import {
     Sidebar,
@@ -82,22 +82,22 @@ interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
     setActive: Function;
 }
 
-export function AppSidebar({ ...props }: AppSidebarProps) {
+export function AppSidebar({ active, setActive, ...props }: AppSidebarProps) {
     return (
         <Sidebar variant="sidebar" {...props}>
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <a href="#" className="gap-3">
-                                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                                    <Sigma
-                                        strokeWidth={2.75}
-                                        className="size-4"
+                            <a href="#">
+                                <div className="flex aspect-square size-6 ml-1 items-center justify-center bg-transparent text-sidebar-primary">
+                                    <SquareSigma
+                                        strokeWidth={2}
+                                        className="size-6"
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1 leading-none">
-                                    <span className="font-semibold">
+                                    <span className="font-semibold text-sidebar-primary">
                                         Calculus Series Toolkit
                                     </span>
                                 </div>
@@ -125,15 +125,12 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
                                                 <SidebarMenuSubButton
                                                     asChild
                                                     isActive={
-                                                        props.active ==
-                                                        item.title
+                                                        active == item.title
                                                             ? true
                                                             : false
                                                     }
                                                     onClick={(e) => {
-                                                        props.setActive(
-                                                            item.title
-                                                        );
+                                                        setActive(item.title);
                                                     }}>
                                                     <a href={item.url}>
                                                         {item.title}
