@@ -14,7 +14,7 @@ export default function Page() {
     };
     return (
         <MathJaxContext config={config}>
-            <div className="w-full h-full">
+            <div className="w-full h-fit">
                 <PSeries></PSeries>
                 <GeometricSeries></GeometricSeries>
                 <TelescopingSeries></TelescopingSeries>

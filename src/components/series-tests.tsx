@@ -29,7 +29,7 @@ function SeriesTest({
                 {header}
             </header>
             <HeadingSeparator className="mt-2 mb-10"></HeadingSeparator>
-            <div className="flex flex-col items-start sm:items-center justify-center overflow-x-scroll">
+            <div className="flex flex-col items-start sm:items-center justify-center overflow-x-scroll lg:overflow-x-hidden overflow-y-hidden">
                 <MathJax>
                     <div className="flex flex-col items-start origin-top-left scale-[85%] sm:scale-100 sm:items-center justify-center gap-8">
                         {children}
@@ -117,7 +117,7 @@ export function DivergenceTest() {
 
 export function IntegralTest() {
     return (
-        <SeriesTest header="Divergence Test">
+        <SeriesTest header="Integral Test">
             <span>{An}</span>
             <span>
                 {
