@@ -30,7 +30,7 @@ function SeriesTest({
             </header>
             <HeadingSeparator className="mt-2 mb-10"></HeadingSeparator>
             <div className="flex flex-col items-start sm:items-center justify-center overflow-x-scroll">
-                <MathJax hideUntilTypeset={"first"}>
+                <MathJax>
                     <div className="flex flex-col items-start origin-top-left scale-[85%] sm:scale-100 sm:items-center justify-center gap-8">
                         {children}
                     </div>
