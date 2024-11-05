@@ -29,9 +29,9 @@ function SeriesTest({
                 {header}
             </header>
             <HeadingSeparator className="mt-2 mb-10"></HeadingSeparator>
-            <div className="flex flex-col items-center justify-center">
-                <MathJax>
-                    <div className="flex flex-col items-center justify-center gap-8">
+            <div className="flex flex-col items-start sm:items-center justify-center overflow-x-scroll">
+                <MathJax hideUntilTypeset={"first"}>
+                    <div className="flex flex-col items-start origin-top-left scale-[85%] sm:scale-100 sm:items-center justify-center gap-8">
                         {children}
                     </div>
                 </MathJax>
@@ -121,7 +121,7 @@ export function IntegralTest() {
             <span>{An}</span>
             <span>
                 {
-                    "`text(for some) \\ \\ N > 0 \\ \\ \\ \\ {( \\ \\ f \\ \\ text(positive, continous, decreasing on) \\ \\ [N, oo)), ( \\ \\ a_n = f(n)):}`"
+                    "`text(for some) \\ \\ N > 0 \\ \\ \\ \\ {( \\ \\ f \\ \\ \\ text(positive, continous, decreasing on) \\ \\ [N, oo)), ( \\ \\ a_n = f(n)):}`"
                 }
             </span>
 
