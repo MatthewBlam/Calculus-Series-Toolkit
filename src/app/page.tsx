@@ -1,3 +1,26 @@
+"use client";
+import { MathJaxContext } from "better-react-mathjax";
+import {
+    DivergenceTest,
+    GeometricSeries,
+    IntegralTest,
+    PSeries,
+    TelescopingSeries,
+} from "@/components/series-tests";
+
 export default function Page() {
-    return <div>hello world</div>;
+    const config = {
+        loader: { load: ["input/asciimath"] },
+    };
+    return (
+        <MathJaxContext config={config}>
+            <div className="w-full h-full">
+                <PSeries></PSeries>
+                <GeometricSeries></GeometricSeries>
+                <TelescopingSeries></TelescopingSeries>
+                <DivergenceTest></DivergenceTest>
+                <IntegralTest></IntegralTest>
+            </div>
+        </MathJaxContext>
+    );
 }

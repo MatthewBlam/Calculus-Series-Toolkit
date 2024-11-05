@@ -33,8 +33,8 @@ export default function Sidebar({ children }: { children: ReactNode }) {
                 } as React.CSSProperties
             }>
             <AppSidebar active={active} setActive={setActive} />
-            <SidebarInset>
-                <header className="flex h-16 shrink-0 items-center gap-2 px-4">
+            <SidebarInset className="px-4 h-screen overflow-hidden">
+                <header className="flex h-16 shrink-0 items-center gap-2">
                     <SidebarTrigger className="-ml-1" />
                     <Separator orientation="vertical" className="mr-2 h-4" />
                     <Breadcrumb>
@@ -51,7 +51,10 @@ export default function Sidebar({ children }: { children: ReactNode }) {
                         </BreadcrumbList>
                     </Breadcrumb>
                 </header>
-                <div id="page-content" className="w-full h-full px-6">
+                {/*<Separator></Separator>*/}
+                <div
+                    id="page-content"
+                    className="w-full h-full px-10 pt-4 overflow-y-scroll flex-1">
                     {children}
                 </div>
             </SidebarInset>
