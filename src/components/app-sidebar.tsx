@@ -16,6 +16,8 @@ import {
     SidebarSeparator,
 } from "@/components/ui/sidebar";
 
+import { useScrollContext } from "@/contexts/scroll-context";
+
 const data = {
     navMain: [
         {
@@ -78,18 +80,18 @@ const data = {
 };
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
-    active: string;
-    setActive: Function;
+    page: string;
 }
 
-export function AppSidebar({ active, setActive, ...props }: AppSidebarProps) {
+export function AppSidebar({ page, ...props }: AppSidebarProps) {
+    const { setScroll } = useScrollContext();
     return (
         <Sidebar variant="sidebar" {...props}>
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <a href="#">
+                            <div className="cursor-pointer">
                                 <div className="flex aspect-square size-6 ml-1 items-center justify-center bg-transparent text-sidebar-primary">
                                     <SquareSigma
                                         strokeWidth={2}
@@ -101,7 +103,7 @@ export function AppSidebar({ active, setActive, ...props }: AppSidebarProps) {
                                         Calculus Series Toolkit
                                     </span>
                                 </div>
-                            </a>
+                            </div>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
@@ -113,9 +115,9 @@ export function AppSidebar({ active, setActive, ...props }: AppSidebarProps) {
                             <SidebarMenuItem key={item.title}>
                                 <SidebarSeparator className="mb-2" />
                                 <SidebarMenuButton asChild>
-                                    <a href={item.url} className="font-medium">
+                                    <span className="font-medium cursor-pointer">
                                         {item.title}
-                                    </a>
+                                    </span>
                                 </SidebarMenuButton>
                                 {item.items?.length ? (
                                     <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
@@ -125,16 +127,16 @@ export function AppSidebar({ active, setActive, ...props }: AppSidebarProps) {
                                                 <SidebarMenuSubButton
                                                     asChild
                                                     isActive={
-                                                        active == item.title
+                                                        page == item.title
                                                             ? true
                                                             : false
                                                     }
                                                     onClick={(e) => {
-                                                        setActive(item.title);
+                                                        setScroll(item.title);
                                                     }}>
-                                                    <a href={item.url}>
+                                                    <span className="cursor-pointer">
                                                         {item.title}
-                                                    </a>
+                                                    </span>
                                                 </SidebarMenuSubButton>
                                             </SidebarMenuSubItem>
                                         ))}

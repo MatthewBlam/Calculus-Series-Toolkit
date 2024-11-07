@@ -3,7 +3,6 @@ import { AppSidebar } from "@/components/app-sidebar";
 import {
     Breadcrumb,
     BreadcrumbItem,
-    BreadcrumbLink,
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
@@ -14,15 +13,16 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
+import { usePageContext } from "@/contexts/page-context";
 
 export default function Sidebar({ children }: { children: ReactNode }) {
-    const [active, setActive] = useState("");
+    const { page } = usePageContext();
     const section = [
         "P-Series",
         "Geometric Series",
         "Telescoping Series",
-    ].includes(active)
+    ].includes(page)
         ? "Common Series"
         : "Series Tests";
     return (
@@ -32,7 +32,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
                     "--sidebar-width": "19rem",
                 } as React.CSSProperties
             }>
-            <AppSidebar active={active} setActive={setActive} />
+            <AppSidebar page={page} />
             <SidebarInset className="px-4 h-screen overflow-hidden">
                 <header className="flex h-16 shrink-0 items-center gap-2">
                     <SidebarTrigger className="-ml-1" />
@@ -40,21 +40,18 @@ export default function Sidebar({ children }: { children: ReactNode }) {
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem className="hidden md:block">
-                                <BreadcrumbLink href="#">
-                                    {section}
-                                </BreadcrumbLink>
+                                {section}
                             </BreadcrumbItem>
                             <BreadcrumbSeparator className="hidden md:block mt-[1px]" />
                             <BreadcrumbItem>
-                                <BreadcrumbPage>{active}</BreadcrumbPage>
+                                <BreadcrumbPage>{page}</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
                 </header>
-                {/*<Separator></Separator>*/}
                 <div
                     id="page-content"
-                    className="w-full h-full px-10 pt-4 overflow-y-scroll flex-1">
+                    className="w-full h-full px-10 overflow-y-scroll flex-1">
                     {children}
                 </div>
             </SidebarInset>
