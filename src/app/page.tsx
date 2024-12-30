@@ -14,7 +14,6 @@ import {
     TelescopingSeries,
 } from "@/components/series-tests";
 import { InView } from "react-intersection-observer";
-import { useState } from "react";
 
 export default function Page() {
     const items = [
@@ -72,7 +71,7 @@ export default function Page() {
                         key={String(item)}
                         threshold={0}
                         rootMargin="-45% 0% -55% 0%">
-                        {({ inView, ref, entry }) => (
+                        {({ inView, ref }) => (
                             <div ref={ref}>{item(inView)}</div>
                         )}
                     </InView>

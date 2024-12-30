@@ -131,7 +131,7 @@ export function AppSidebar({ page, ...props }: AppSidebarProps) {
                                                             ? true
                                                             : false
                                                     }
-                                                    onClick={(e) => {
+                                                    onClick={() => {
                                                         setScroll(item.title);
                                                     }}>
                                                     <span className="cursor-pointer">

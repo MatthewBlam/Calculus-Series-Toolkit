@@ -59,7 +59,7 @@ export function PSeries({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("P-Series");
         /*setTimedOut(true);
@@ -88,7 +88,7 @@ export function GeometricSeries({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Geometric Series");
         /*setTimedOut(true);
@@ -121,7 +121,7 @@ export function TelescopingSeries({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Telescoping Series");
         /*setTimedOut(true);
@@ -161,7 +161,7 @@ export function DivergenceTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Divergence Test");
         /*setTimedOut(true);
@@ -194,7 +194,7 @@ export function IntegralTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Integral Test");
         /*setTimedOut(true);
@@ -233,7 +233,7 @@ export function DirectComparisonTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Direct Comparison Test");
         /*setTimedOut(true);
@@ -271,7 +271,7 @@ export function LimitComparisonTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Limit Comparison Test");
         /*setTimedOut(true);
@@ -314,7 +314,7 @@ export function AlternatingSeriesTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Alternating Series Test");
         /*setTimedOut(true);
@@ -347,7 +347,7 @@ export function AbsoluteConvergenceTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Absolute Convergence Test");
         /*setTimedOut(true);
@@ -375,7 +375,7 @@ export function RatioTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Ratio Test");
         /*setTimedOut(true);
@@ -408,7 +408,7 @@ export function RootTest({ inView }: { inView: boolean }) {
             ref.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [scroll]);
-    const { setPage, timedOut, setTimedOut } = usePageContext();
+    const { setPage, timedOut } = usePageContext();
     if (inView && !timedOut) {
         setPage("Root Test");
         /*setTimedOut(true);
