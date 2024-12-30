@@ -50,6 +50,7 @@ const SeriesTest = forwardRef<HTMLDivElement, SeriesTestProps>(
         );
     }
 );
+SeriesTest.displayName = "SeriesTest";
 
 export function PSeries({ inView }: { inView: boolean }) {
     const ref = useRef() as MutableRefObject<HTMLDivElement>;
